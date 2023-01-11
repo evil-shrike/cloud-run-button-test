@@ -1,5 +1,5 @@
 {
   "options": {
-    "allow-unauthenticated": true
+    "allow-unauthenticated": false
   }
 }
