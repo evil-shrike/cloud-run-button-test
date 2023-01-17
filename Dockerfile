@@ -8,6 +8,7 @@ ENV AUTOLOGIN="true" \
 RUN apk update && \
     apk add --no-cache bash ttyd tzdata sudo nano curl
 
-CMD ["ttyd", "bash"]
+#CMD ["ttyd", "bash", "--", "-c \"npm init gaarf-wf\""]
+CMD ["ttyd", "npm", "--", "init", "gaarf-wf"]
 
 EXPOSE 7681/tcp
