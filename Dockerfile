@@ -1,14 +1,13 @@
-FROM node:18
+FROM google/cloud-sdk:alpine
 
-#RUN apt-get update && apt-get upgrade -y && \
-#    apt-get install -y nodejs \
-#    npm   
+RUN apk add --update nodejs npm
 
-# Downloading and installing gcloud package.
-RUN curl https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz > /tmp/google-cloud-sdk.tar.gz
-RUN mkdir -p /usr/local/gcloud \
-  && tar -C /usr/local/gcloud -xvf /tmp/google-cloud-sdk.tar.gz \
-  && /usr/local/gcloud/google-cloud-sdk/install.sh
-ENV PATH $PATH:/usr/local/gcloud/google-cloud-sdk/bin
+ENV AUTOLOGIN="true" \
+    TZ="Etc/UTC"
 
-RUN npm init gaarf-wf
+RUN apk update && \
+    apk add --no-cache bash ttyd tzdata sudo nano curl
+
+CMD ["ttyd", "bash"]
+
+EXPOSE 7681/tcp
