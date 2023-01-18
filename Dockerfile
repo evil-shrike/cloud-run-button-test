@@ -9,9 +9,11 @@ RUN apk update && \
     apk add --no-cache bash ttyd tzdata sudo nano curl
 
 RUN npm install -g create-gaarf-wf
-CMD ["ttyd", "--debug 1", "--url-arg", "bash"]
 
-#CMD ["ttyd", "bash", "--", "-c \"npm init gaarf-wf\""]
+#CMD ["ttyd", "bash"]   # works
+
+CMD ["ttyd", "bash", "-c", "npm init gaarf-wf"]
+
 #CMD ["ttyd", "npm", "--", "init", "gaarf-wf"]
 
 EXPOSE 7681/tcp
