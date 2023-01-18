@@ -7,7 +7,7 @@ RUN apk update && \
 
 RUN npm install -g create-gaarf-wf
 
-CMD ["ttyd", "--debug=0", "bash"]
+CMD ["ttyd", "--debug=7", "bash"]
 
 #CMD ["ttyd", "bash", "-c", "npm init gaarf-wf -- --diag"]
 
