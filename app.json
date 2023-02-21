@@ -1,6 +1,0 @@
-{
-  "options": {
-    "allow-unauthenticated": true,
-    "port": 7681
-  }
-}

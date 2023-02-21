@@ -6,6 +6,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_current.x | bash - && \
     node --version && \ 
     npm --version
 
+npm install --global pnpm
 #RUN curl -fsSL https://get.pnpm.io/install.sh | sh -
 #RUN wget -qO /bin/pnpm "https://github.com/pnpm/pnpm/releases/latest/download/pnpm-linuxstatic-x64" && chmod +x /bin/pnpm
 
