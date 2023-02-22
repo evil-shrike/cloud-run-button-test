@@ -1,0 +1,26 @@
+{
+  "use_current_project": false,
+  "name": "gaarftest",
+  "path_to_ads_queries": "ads-queries",
+  "path_to_bq_queries": "bq-queries",
+  "custom_ids_query_path": "",
+  "use_googleads_config": false,
+  "cf_memory": "1024MB",
+  "output_dataset": "gaarftest_ads",
+  "customer_id": "6368728866",
+  "bq_macro": {
+    "dst_dataset": "gaarftest",
+    "ads_dataset": "gaarftest_ads"
+  },
+  "deploy_scripts": true,
+  "deploy_wf": false,
+  "schedule_wf": true,
+  "schedule_time": "07:00",
+  "clone_dashboard": true,
+  "dashboard_id": "7dc7e6db-a0f1-4bd1-bfb8-0609b2ab712c",
+  "dashboard_name": "gaarf test",
+  "dashboard_dataset": "gaarftest",
+  "dashboard_datasources": {
+    "campaign": "campaign"
+  }
+}
