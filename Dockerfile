@@ -7,5 +7,5 @@ WORKDIR /app
 COPY answers.json .
 COPY ads-queries ads-queries
 COPY bq-queries bq-queries
-#CMD ["ttyd", "bash", "-c", "npm init gaarf-wf -- --diag --answers=answers.json"]
-CMD ["ttyd", "bash"]
+CMD ["ttyd", "bash", "-c", "npm init gaarf-wf -- --diag --answers=answers.json"]
+#CMD ["ttyd", "bash"]
