@@ -19,12 +19,13 @@
     },
     "precreate": {
       "commands": [
-        "precreate.sh"
+        "echo 'precreate'"
       ]
     },
     "postcreate": {
       "commands": [
-        "echo 'postcreate'"
+        "chmod +x ./postcreate.sh",
+        "./postcreate.sh"
       ]
     }
   }
