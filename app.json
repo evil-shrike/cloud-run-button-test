@@ -19,7 +19,7 @@
     },
     "precreate": {
       "commands": [
-        "echo 'precreate'"
+        "precreate.sh"
       ]
     },
     "postcreate": {
