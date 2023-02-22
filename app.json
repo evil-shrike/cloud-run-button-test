@@ -24,7 +24,6 @@
     },
     "postcreate": {
       "commands": [
-        "chmod +x ./postcreate.sh",
         "./postcreate.sh"
       ]
     }
