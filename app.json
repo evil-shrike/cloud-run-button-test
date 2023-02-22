@@ -1,0 +1,31 @@
+{
+  "options": {
+    "allow-unauthenticated": true,
+    "port": 7681
+  },
+  "build": {
+    "skip": false,
+  },
+  "hooks": {
+    "prebuild": {
+      "commands": [
+        "echo 'prebuild'"
+      ]
+    },
+    "postbuild": {
+      "commands": [
+        "echo 'postbuild'"
+      ]
+    },
+    "precreate": {
+      "commands": [
+        "echo 'precreate'"
+      ]
+    },
+    "postcreate": {
+      "commands": [
+        "echo 'postcreate'"
+      ]
+    }
+  }
+}
