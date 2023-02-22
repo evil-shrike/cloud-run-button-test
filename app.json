@@ -4,7 +4,7 @@
     "port": 7681
   },
   "build": {
-    "skip": false,
+    "skip": false
   },
   "hooks": {
     "prebuild": {
