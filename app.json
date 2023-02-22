@@ -9,7 +9,7 @@
   "hooks": {
     "prebuild": {
       "commands": [
-        "echo 'prebuild'"
+        "./prebuild.sh"
       ]
     },
     "postbuild": {

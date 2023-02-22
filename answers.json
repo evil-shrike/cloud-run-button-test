@@ -1,13 +1,12 @@
 {
-  "use_current_project": false,
+  "use_current_project": true,
   "name": "gaarftest",
   "path_to_ads_queries": "ads-queries",
   "path_to_bq_queries": "bq-queries",
   "custom_ids_query_path": "",
-  "use_googleads_config": false,
+  "//use_googleads_config": false,
   "cf_memory": "1024MB",
   "output_dataset": "gaarftest_ads",
-  "customer_id": "6368728866",
   "bq_macro": {
     "dst_dataset": "gaarftest",
     "ads_dataset": "gaarftest_ads"
