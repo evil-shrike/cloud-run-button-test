@@ -16,7 +16,6 @@ gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT --member=serviceAcc
 
 gcloud services enable cloudresourcemanager.googleapis.com
 gcloud services enable artifactregistry.googleapis.com
-gcloud services enable run.googleapis.com
 gcloud services enable iamcredentials.googleapis.com
 gcloud services enable cloudbuild.googleapis.com
 gcloud services enable bigquery.googleapis.com

@@ -5,6 +5,7 @@
   "path_to_bq_queries": "bq-queries",
   "custom_ids_query_path": "",
   "use_googleads_config": false,
+  "googleads_config_generate_refreshtoken": false,
   "cf_memory": "1024MB",
   "output_dataset": "gaarftest_ads",
   "bq_macro": {

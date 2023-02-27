@@ -9,7 +9,7 @@
   "hooks": {
     "prebuild": {
       "commands": [
-        "./prebuild.sh"
+        "./cloud-run-hooks/prebuild.sh"
       ]
     },
     "postbuild": {
@@ -24,7 +24,7 @@
     },
     "postcreate": {
       "commands": [
-        "./postcreate.sh"
+        "./cloud-run-hooks/postcreate.sh"
       ]
     }
   }
