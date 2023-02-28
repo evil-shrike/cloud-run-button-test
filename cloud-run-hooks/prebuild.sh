@@ -23,6 +23,7 @@ gcloud services enable cloudfunctions.googleapis.com
 gcloud services enable googleads.googleapis.com
 
 if [ -n $GOOGLE_ADS_CONFIG ]; then
+  # NOTE: the script is executed inside $APP_DIR folder (not where it's located) 
   if [[ ! -f ./$GOOGLE_ADS_CONFIG && -f ./../$GOOGLE_ADS_CONFIG ]]; then
     cp ./../$GOOGLE_ADS_CONFIG ./$GOOGLE_ADS_CONFIG
   fi
@@ -32,5 +33,5 @@ if [ -n $GOOGLE_ADS_CONFIG ]; then
     echo -e "${RED}Could not found $GOOGLE_ADS_CONFIG config file${NC}"
   fi
 
-  sed -i'.original' -e "s|#[[:space:]]*COPY google-ads.yaml \..*$|COPY $GOOGLE_ADS_CONFIG \.|" ./../Dockerfile
+  sed -i'.original' -e "s|#[[:space:]]*COPY google-ads.yaml \..*$|COPY $GOOGLE_ADS_CONFIG \.|" ./Dockerfile
 fi
