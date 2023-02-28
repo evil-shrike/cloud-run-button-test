@@ -9,5 +9,5 @@ COPY ads-queries ads-queries
 COPY bq-queries bq-queries
 COPY cloud-run-hooks/main.sh main.sh
 #COPY google-ads.yaml .
-CMD ["ttyd", "bash", "-c", "main.sh"]
+CMD ["ttyd", "bash", "-c", "./main.sh"]
 #CMD ["ttyd", "bash"]
