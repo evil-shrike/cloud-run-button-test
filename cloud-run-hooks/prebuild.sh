@@ -6,7 +6,7 @@ RED='\033[0;31m' # Red Color
 CYAN='\033[0;36m' # Cyan
 NC='\033[0m' # No Color
 
-echo -n -e "${CYAN}Would you like to use a google-ads.yaml (Y) - if so, please upload one then enter 'Y', otherewise (N) you'll be asked to enter credentials later:${NC} "
+echo -n -e "${NC}Would you like to use a google-ads.yaml (Y) - if so, please upload one then enter 'Y', otherewise (N) you'll be asked to enter credentials later:${NC} "
 read -r USE_GOOGLE_ADS_CONFIG
 while [[ $USE_GOOGLE_ADS_CONFIG = "Y" || $USE_GOOGLE_ADS_CONFIG = "y" ]]; do 
   # NOTE: the script is executed inside $APP_DIR folder (not where it's located) 
@@ -48,4 +48,3 @@ gcloud services enable cloudbuild.googleapis.com
 gcloud services enable bigquery.googleapis.com
 gcloud services enable cloudfunctions.googleapis.com
 gcloud services enable googleads.googleapis.com
-
