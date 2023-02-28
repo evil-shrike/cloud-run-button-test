@@ -17,13 +17,9 @@
         "echo 'postbuild'"
       ]
     },
-    "precreate": {
-      "commands": [
-        "echo 'precreate'"
-      ]
-    },
     "postcreate": {
       "commands": [
+        "chmod +x ./cloud-run-hooks/postcreate.sh",
         "./cloud-run-hooks/postcreate.sh"
       ]
     }
