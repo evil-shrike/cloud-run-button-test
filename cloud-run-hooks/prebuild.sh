@@ -22,7 +22,7 @@ gcloud services enable bigquery.googleapis.com
 gcloud services enable cloudfunctions.googleapis.com
 gcloud services enable googleads.googleapis.com
 
-if [ -n $USE_GOOGLE_ADS_CONFIG ]; then
+if [ $USE_GOOGLE_ADS_CONFIG = "Y" || $USE_GOOGLE_ADS_CONFIG = "y" ]; then
   echo "using google-ads.yaml"
   # NOTE: the script is executed inside $APP_DIR folder (not where it's located) 
   if [[ ! -f ./google-ads.yaml && -f ./../google-ads.yaml ]]; then
@@ -34,7 +34,7 @@ if [ -n $USE_GOOGLE_ADS_CONFIG ]; then
     echo -e "${RED}Could not found google-ads.yaml config file${NC}"
   fi
 
-  sed -i'.original' -e "s|##*[[:space:]]*COPY google-ads.yaml \..*$|COPY google-ads.yaml \.|" ./Dockerfile
+  sed -i -e "s|##*[[:space:]]*COPY google-ads.yaml \..*$|COPY google-ads.yaml \.|" ./Dockerfile
   # TODO: update 
   # "use_googleads_config": true,
 fi
