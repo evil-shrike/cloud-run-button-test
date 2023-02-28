@@ -16,7 +16,7 @@ while [[ $USE_GOOGLE_ADS_CONFIG = "Y" || $USE_GOOGLE_ADS_CONFIG = "y" ]]; do
   if [[ ! -f ./google-ads.yaml ]]; then    
     echo -e "${RED}Could not found google-ads.yaml config file${NC}"
     echo -n -e "${NC}Please upload google-ads.yaml and enter 'Y' or press Enter to skip${NC}"
-    echo -r USE_GOOGLE_ADS_CONFIG
+    read -r USE_GOOGLE_ADS_CONFIG
   fi
 done
 if [[ $USE_GOOGLE_ADS_CONFIG = "Y" || $USE_GOOGLE_ADS_CONFIG = "y" ]]; then
