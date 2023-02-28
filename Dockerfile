@@ -7,5 +7,6 @@ WORKDIR /app
 COPY answers.json .
 COPY ads-queries ads-queries
 COPY bq-queries bq-queries
+#COPY google-ads.yaml .
 CMD ["ttyd", "bash", "-c", "npm init gaarf-wf -- --diag --answers=answers.json"]
 #CMD ["ttyd", "bash"]

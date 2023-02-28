@@ -21,3 +21,16 @@ gcloud services enable cloudbuild.googleapis.com
 gcloud services enable bigquery.googleapis.com
 gcloud services enable cloudfunctions.googleapis.com
 gcloud services enable googleads.googleapis.com
+
+if [ -n $GOOGLE_ADS_CONFIG ]; then
+  if [[ ! -f ./$GOOGLE_ADS_CONFIG && -f ./../$GOOGLE_ADS_CONFIG ]]; then
+    cp ./../$GOOGLE_ADS_CONFIG ./$GOOGLE_ADS_CONFIG
+  fi
+  if [[ ! -f ./$GOOGLE_ADS_CONFIG ]]; then
+    RED='\033[0;31m' # Red Color
+    NC='\033[0m' # No Color
+    echo -e "${RED}Could not found $GOOGLE_ADS_CONFIG config file${NC}"
+  fi
+
+  sed -i'.original' -e "s|#[[:space:]]*COPY google-ads.yaml \..*$|COPY $GOOGLE_ADS_CONFIG \.|" ./../Dockerfile
+fi

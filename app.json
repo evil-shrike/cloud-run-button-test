@@ -1,4 +1,11 @@
 {
+  "env": {
+    "GOOGLE_ADS_CONFIG": {
+      "description": "If you have one you can upload a google-ads.yaml with your Ads credentials and type its name in the prompt, otherewise you can skip (press Enter) and enter credentials later during installation",
+      "required": false,
+      "order": 1
+    },
+  },
   "options": {
     "allow-unauthenticated": true,
     "port": 7681
