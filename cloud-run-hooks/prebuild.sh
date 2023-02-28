@@ -22,7 +22,7 @@ gcloud services enable bigquery.googleapis.com
 gcloud services enable cloudfunctions.googleapis.com
 gcloud services enable googleads.googleapis.com
 
-if [[ $GOOGLE_ADS_CONFIG = "Y" || $GOOGLE_ADS_CONFIG = "y" ]]; then
+if [[ $USE_GOOGLE_ADS_CONFIG = "Y" || $USE_GOOGLE_ADS_CONFIG = "y" ]]; then
   echo "using google-ads.yaml"
   # NOTE: the script is executed inside $APP_DIR folder (not where it's located) 
   if [[ ! -f ./google-ads.yaml && -f ./../google-ads.yaml ]]; then

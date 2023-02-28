@@ -1,13 +1,9 @@
 {
   "env": {
-    "GOOGLE_ADS_CONFIG": {
+    "USE_GOOGLE_ADS_CONFIG": {
       "description": "Would you like to use a google-ads.yaml (Y) - please upload one, otherewise (N) you'll be asked to enter credentials later",
       "required": false,
       "value": ""
-    },
-    "MCC": {
-      "description": "test",
-      "required": false
     }
   },
   "options": {
