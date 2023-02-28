@@ -2,6 +2,13 @@
 set -e
 set -x
 
+RED='\033[0;31m' # Red Color
+CYAN='\033[0;36m' # Cyan
+NC='\033[0m' # No Color
+
+echo -n "${CYAN}Would you like to use a google-ads.yaml (Y) - if so, please upload one then enter 'Y', otherewise (N) you'll be asked to enter credentials later:${NC} "
+read -r USE_GOOGLE_ADS_CONFIG
+
 #echo "K_SERVICE: $K_SERVICE"
 #echo "GOOGLE_CLOUD_REGION: $GOOGLE_CLOUD_REGION"
 #echo "GOOGLE_CLOUD_PROJECT: $GOOGLE_CLOUD_PROJECT"
@@ -22,15 +29,13 @@ gcloud services enable bigquery.googleapis.com
 gcloud services enable cloudfunctions.googleapis.com
 gcloud services enable googleads.googleapis.com
 
-if [[ $GOOGLE_ADS_CONFIG = "Y" || $GOOGLE_ADS_CONFIG = "y" ]]; then
+if [[ $USE_GOOGLE_ADS_CONFIG = "Y" || $USE_GOOGLE_ADS_CONFIG = "y" ]]; then
   echo "using google-ads.yaml"
   # NOTE: the script is executed inside $APP_DIR folder (not where it's located) 
   if [[ ! -f ./google-ads.yaml && -f ./../google-ads.yaml ]]; then
     cp ./../google-ads.yaml ./google-ads.yaml
   fi
   if [[ ! -f ./google-ads.yaml ]]; then
-    RED='\033[0;31m' # Red Color
-    NC='\033[0m' # No Color
     echo -e "${RED}Could not found google-ads.yaml config file${NC}"
   fi
 
