@@ -15,11 +15,14 @@ while [[ $USE_GOOGLE_ADS_CONFIG = "Y" || $USE_GOOGLE_ADS_CONFIG = "y" ]]; do
   fi
   if [[ ! -f ./google-ads.yaml ]]; then    
     echo -e "${RED}Could not found google-ads.yaml config file${NC}"
-    echo -n -e "${NC}Please upload google-ads.yaml and enter 'Y' or press Enter to skip${NC}"
+    echo -n -e "${NC}Please upload google-ads.yaml and enter 'Y' or press Enter to skip: ${NC}"
     read -r USE_GOOGLE_ADS_CONFIG
+  else
+    break
   fi
 done
 if [[ $USE_GOOGLE_ADS_CONFIG = "Y" || $USE_GOOGLE_ADS_CONFIG = "y" ]]; then
+  echo "Using google-ads.yaml"
   # update Dockerfile to copy google-ads.yaml:
   sed -i -e "s|##*[[:space:]]*COPY google-ads.yaml \..*$|COPY google-ads.yaml \.|" ./Dockerfile
   # update answers.json to use google-ads.yaml:
