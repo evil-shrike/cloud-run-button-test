@@ -34,4 +34,6 @@ if [ -n $GOOGLE_ADS_CONFIG ]; then
   fi
 
   sed -i'.original' -e "s|#[[:space:]]*COPY google-ads.yaml \..*$|COPY $GOOGLE_ADS_CONFIG \.|" ./Dockerfile
+  # TODO: update 
+  # "use_googleads_config": true,
 fi
