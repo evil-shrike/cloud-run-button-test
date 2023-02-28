@@ -15,7 +15,7 @@
     "ads_dataset": "gaarftest_ads"
   },
   "deploy_scripts": true,
-  "deploy_wf": true,
+  "//deploy_wf": true,
   "schedule_wf": true,
   "schedule_time": "07:00",
   "run_job": true,

@@ -4,8 +4,8 @@ set -e
 if [[ -f ./dashboard_url.txt ]]; then
   # found dashboard_url from previous run
   echo -e "It seems you have deployed the solution already"
-  echo "If you haven't alrdeay, use this url for dashboard cloding:"
-  cat ./dashboard_url
+  echo "If you haven't already, use this url for dashboard cloding:"
+  cat ./dashboard_url.txt
   echo -e "Would you like to delete the current Cloud Run service (it's needed only for installation)"
   read -r COMMIT_SUICIDE
   if [[ -n $COMMIT_SUICIDE ]]; then
