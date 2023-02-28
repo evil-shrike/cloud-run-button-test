@@ -26,7 +26,7 @@ if [[ $USE_GOOGLE_ADS_CONFIG = "Y" || $USE_GOOGLE_ADS_CONFIG = "y" ]]; then
   # update Dockerfile to copy google-ads.yaml:
   sed -i -e "s|##*[[:space:]]*COPY google-ads.yaml \..*$|COPY google-ads.yaml \.|" ./Dockerfile
   # update answers.json to use google-ads.yaml:
-  sed -i -e "s|"use_googleads_config":[[:space:]]*false,|"use_googleads_config": true,|" ./answers.json
+  sed -i -e "s|\"use_googleads_config\":[[:space:]]*false,|\"use_googleads_config\": true,|" ./answers.json
 fi
 
 #echo "K_SERVICE: $K_SERVICE"
