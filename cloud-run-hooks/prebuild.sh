@@ -23,6 +23,7 @@ gcloud services enable cloudfunctions.googleapis.com
 gcloud services enable googleads.googleapis.com
 
 if [ -n $GOOGLE_ADS_CONFIG ]; then
+  echo "google ads config in $GOOGLE_ADS_CONFIG"
   # NOTE: the script is executed inside $APP_DIR folder (not where it's located) 
   if [[ ! -f ./$GOOGLE_ADS_CONFIG && -f ./../$GOOGLE_ADS_CONFIG ]]; then
     cp ./../$GOOGLE_ADS_CONFIG ./$GOOGLE_ADS_CONFIG
