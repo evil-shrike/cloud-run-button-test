@@ -11,10 +11,11 @@ if [[ -f ./dashboard_url.txt ]]; then
   cat ./dashboard_url.txt
   echo -e "${NC}"
   echo
-  echo -e "${RED}Would you like to delete the current Cloud Run service (it's needed only for installation) (Y\/N): ${NC}"
+  echo -n -e "${RED}Would you like to delete the current Cloud Run service (it's needed only for installation) (Y/N): ${NC}"
   read -r COMMIT_SUICIDE
   if [[ $COMMIT_SUICIDE = 'Y' || $COMMIT_SUICIDE = 'y' ]]; then
     REGION=$(curl -H Metadata-Flavor:Google http://metadata.google.internal/computeMetadata/v1/instance/region -s --fail)
+    REGION=$(basename $REGION)
     echo "Detected region $REGION"
     gcloud run services delete $K_SERVICE --region $REGION
   else
