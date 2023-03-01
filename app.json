@@ -8,20 +8,10 @@
   },
   "hooks": {
     "prebuild": {
-      "commands": [
-        "./cloud-run-hooks/prebuild.sh"
-      ]
-    },
-    "postbuild": {
-      "commands": [
-        "echo 'postbuild'"
-      ]
+      "commands": ["./cloud-run-hooks/prebuild.sh"]
     },
     "postcreate": {
-      "commands": [
-        "chmod +x ./cloud-run-hooks/postcreate.sh",
-        "./cloud-run-hooks/postcreate.sh"
-      ]
+      "commands": ["./cloud-run-hooks/postcreate.sh"]
     }
   }
 }

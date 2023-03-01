@@ -33,6 +33,6 @@ else
   if [[ -f ./dashboard_url.txt ]]; then
     PROJECT_ID=$(curl -H Metadata-Flavor:Google http://metadata.google.internal/computeMetadata/v1/project/project-id -s --fail)
     # TODO: hard-code of "gaarftest" :(
-    gsutil -m cp -R ./dashboard_url.txt gs://$PROJECT_ID/gaarftest
+    gsutil -m cp -R ./dashboard_url.txt gs://$PROJECT_ID/gaarftest/
   fi
 fi
