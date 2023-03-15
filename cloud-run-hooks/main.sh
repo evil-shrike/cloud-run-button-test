@@ -28,7 +28,7 @@ if [[ -f ./dashboard_url.txt ]]; then
     REGION=$(curl -H Metadata-Flavor:Google http://metadata.google.internal/computeMetadata/v1/instance/region -s --fail)
     REGION=$(basename $REGION)
     echo "Detected region $REGION"
-    gcloud run services delete $K_SERVICE --region $REGION
+    gcloud run services delete $K_SERVICE --region $REGION --quiet
   else
     echo -n "Would you like to restart installation? (Y/N): "
     read -r REPEAR_INSTALLATION
