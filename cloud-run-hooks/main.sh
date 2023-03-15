@@ -17,7 +17,7 @@ White='\033[0;37m'        # White
 
 if [[ -f ./dashboard_url.txt ]]; then
   # found dashboard_url from previous run
-  echo -e "It seems you have deployed the solution already."
+  echo -e "${White}It seems you have deployed the solution already.{$NC}"
   echo -e "If you haven't already, use this url for dashboard cloning:${Cyan}"
   cat ./dashboard_url.txt
   echo -e "${NC}"
